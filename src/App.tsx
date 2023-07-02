@@ -1,8 +1,9 @@
+import StrenghtBlock from "./components/strenght-block";
 import "./styles/global.scss";
 
 function App() { 
   return(
-    <div>Hello</div>
+    <StrenghtBlock></StrenghtBlock>
   )
 } 
 
