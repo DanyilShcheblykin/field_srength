@@ -1,9 +1,10 @@
 import { useState } from "react";
 import PasswordInput from "../password-input";
+import StrengthIndicator from "../strength-indicator";
 import styles from "./strenght-block.module.scss";
 
 const StrenghtBlock = () => {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState<string>("");
   const [colorsArray, setColorsArray] = useState<Array<string>>([
     "gray",
     "gray",
@@ -48,6 +49,11 @@ const StrenghtBlock = () => {
         handlePasswordChange={handlePasswordChange}
         password={password}
       ></PasswordInput>
+      <div className={styles.indicatorContainer}>
+        {colorsArray.map((color, index) => (
+          <StrengthIndicator key={index} color={color} />
+        ))}
+      </div>
     </div>
   );
 };
